@@ -1,0 +1,17 @@
+{% extends "public/layout.html" %}
+{% from 'bootstrap/form.html' import render_form %}
+
+<!-- env\Lib\site-packages\flask_bootstrap\templates\bootstrap -->
+
+{% block body %}
+    <div class="div-top">
+        <div class="container">
+            <h1>
+                <strong>HOME</strong>
+            </h1>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="{{url_for('static',filename='js/app.js')}}" charset="utf-8"></script>
+{% endblock %}

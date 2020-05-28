@@ -1,0 +1,18 @@
+body {
+    background-color: rgb(43, 56, 50) ;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.div-top {
+    margin-top: 56px;
+}
