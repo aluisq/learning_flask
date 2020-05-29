@@ -15,7 +15,8 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #f5f5f5;
+  background-color: white;
+  color: white;
 }
 
 .form-signin {
@@ -46,4 +47,20 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.circle {
+  background-color: rgb(37, 9, 114);
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  margin-left: 24%;
+}
+
+.circle img {
+  position: center;
+  bottom: 0;
+  width: 100%;
 }

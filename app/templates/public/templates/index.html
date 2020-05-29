@@ -5,13 +5,16 @@
 
 {% block body %}
     <div class="div-top">
-        <div class="container">
-            <h1>
-                <strong>HOME</strong>
-            </h1>
-        </div>
+        <div class="jumbotron">
+            <h1 class="display-4">Bem vido a plataforma da <span style="color: green;" >RockeTI!</span></h1>
+            <p class="lead">Aqui você terá alguns recursos para agilizar o seu atendimento, use e abuse ;) </p>
+            <hr class="my-4">
+            <p>Caso tenha alguma sugestão, por favor, entre em contato...</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Enviar Sugestão</a>
+          </div>
     </div>
-{% endblock %}
-{% block scripts %}
     <script src="{{url_for('static',filename='js/app.js')}}" charset="utf-8"></script>
+    {% block scripts %}
+    {% endblock %}
 {% endblock %}
+    
