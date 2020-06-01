@@ -17,9 +17,9 @@ class ProductionConfig(Config):
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    DB_NAME = "development-db"
+    DB_NAME = "rocketi"
     DB_USERNAME = "root"
-    DB_PASSWORD = "example"
+    DB_PASSWORD = ""
     UPLOADS = "/home/username/learning_flask/app/app/static/img/uploads"
     SESSION_COOKIE_SECURE = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///bigbox.db'

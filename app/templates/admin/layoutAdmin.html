@@ -1,0 +1,116 @@
+<!Doctype html>
+<html lang="pt-br">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {{ bootstrap.load_css() }}
+    <link rel="icon" href="{{ url_for('static',filename='img/favicon/favicon.png')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>TI - Unimed</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-success">
+        <img src="{{ url_for('static',filename='img/rocket.png')}}" alt="foguete">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index">RockeTI <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+        </nav>
+        <div class="div-top-dashboard">
+            <div class="container-fluid">
+                <div class="row">
+                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                        <div class="sidebar-sticky pt-3">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="{{url_for('admin_dashboard')}}">
+                                        <span data-feather="home"></span>
+                                        Dashboard <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url_for('register')}}">
+                                        <span data-feather="file"></span>
+                                        Usuários
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="shopping-cart"></span>
+                                        Products
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column mb-2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file-text"></span>
+                                        Current month
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file-text"></span>
+                                        Last quarter
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file-text"></span>
+                                        Social engagement
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <span data-feather="file-text"></span>
+                                        Year-end sale
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                            {% block content %}{% endblock %}
+                            <div class="btn-toolbar mb-2 mb-md-0">
+                                <div class="btn-group mr-2">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                                    <span data-feather="calendar"></span>
+                                    This week
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- Your page content -->
+                        {% block body %}{% endblock %}
+
+                        {{ bootstrap.load_js() }}
+                        {% block scripts %}
+                        <!-- Optional JavaScript -->
+
+                        {% endblock %}
+
+                        <!-- Footer -->
+                        <footer class="page-footer font-small blue">
+                            <!-- Copyright -->
+                            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                                <a href="https://www.unimedrecife.com.br/#!"> Unimed Recife</a>
+                            </div>
+                            <!-- Copyright -->
+                        </footer>
+                        <!-- Footer -->
+                    </body>
+                    </html>
