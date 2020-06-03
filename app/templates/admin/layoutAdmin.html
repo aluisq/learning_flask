@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {{ bootstrap.load_css() }}
+    {% block head %}{% endblock %}
     <link rel="icon" href="{{ url_for('static',filename='img/favicon/favicon.png')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
     <title>TI - Unimed</title>
-    {% block head %}{% endblock %}
+
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-success">
@@ -20,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index">RockeTI <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{url_for('index')}}">RockeTI <span class="sr-only">(current)</span></a>
                 </li>
             </div>
         </nav>
@@ -45,11 +46,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         <span data-feather="shopping-cart"></span>
-                                        Products
+                                        Equipamentos
                                     </a>
                                 </li>
                             </ul>
-                            <ul class="nav flex-column mb-2">
+                            <ul class="nav flex-column mb-4">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         <span data-feather="file-text"></span>
@@ -103,14 +104,5 @@
 
                         {% endblock %}
 
-                        <!-- Footer -->
-                        <footer class="page-footer font-small blue">
-                            <!-- Copyright -->
-                            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                                <a href="https://www.unimedrecife.com.br/#!"> Unimed Recife</a>
-                            </div>
-                            <!-- Copyright -->
-                        </footer>
-                        <!-- Footer -->
                     </body>
                     </html>

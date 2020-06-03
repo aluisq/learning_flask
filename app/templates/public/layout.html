@@ -14,7 +14,7 @@
     <body>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-success">
             <img src="{{ url_for('static',filename='img/rocket.png')}}" alt="foguete">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button style="margin-right: 85%;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
@@ -32,12 +32,14 @@
                         <a class="nav-link" href="agenda">Agenda Telefônica</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
-                    Olá, Arthur! Precisa de Ajuda?
-                </span>
             </div>
+            <span class="navbar-text">
+                Olá, {{current_user.first_name}}! Precisa de Ajuda?
+            </span>
+            <span>
+                <a class="btn btn-warning btn-lg" href="{{url_for('logout')}}" role="button">Sair</a>
+            </span>
         </nav>
-
         <!-- Your page content -->
         {% block body %}{% endblock %}
 

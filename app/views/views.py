@@ -11,24 +11,21 @@ def login():
         password = request.form['password']
         user = User.query.filter_by(login=login).first()
 
-        if not user or not user.verify_password(password):
-            return redirect(url_for('login.html'))
-        else:
+        if user and user.verify_password(password):
             login_user(user)
-            redirect(url_for('public/templates/index.html'))
+            return redirect('index')
+
+        redirect(url_for('login'))
 
     return render_template('public/templates/login.html')
 
 @app.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for('public/templates/logout.html'))
-
+    return redirect(url_for('login'))
 
 @app.route("/index")
 def index():
-    # print(f"Flask ENV is set to: {app.config['ENV']}")
-    # print(f"Flask DB is set to: {app.config['SQLALCHEMY_DATABASE_URI']}")
     return render_template('public/templates/index.html')
 
 @app.route("/ips")

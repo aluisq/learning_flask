@@ -5,8 +5,7 @@ from flask_login import UserMixin
 
 @login_manager.user_loader
 def get_user(user_id):
-    return Use.query.filter_by(id=user_id)
-
+    return User.query.filter_by(id=user_id).first()
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
