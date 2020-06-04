@@ -1,0 +1,25 @@
+{% extends 'admin/layoutAdmin.html' %}
+
+{% block content %}
+    <h1 class="h2">Cadastro Inválido</h1>
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="jumbotron">
+  <h1 class="display-4">Error!</h1>
+  <p class="lead">Desculpe, mas já existe um usuário cadastrado com esse <strong>login</strong> ou <strong>email</strong>.</p>
+  <hr class="my-4">
+  <p class="lead">
+    <a class="btn btn-secondary btn-lg" href="{{url_for('register')}}" role="button">Voltar</a>
+  </p>
+</div>
+{% endblock %}
+
+<!--
+<div class="div-top">
+
+    <h1>Usuário ou email já estão sendo utilizados, por favor, tente novamente.</h1>
+</div>
+<button type="button" class="btn btn-lg btn-success" name="button" action="{{url_for('register')}}">VOLTAR</button> -->
