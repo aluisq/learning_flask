@@ -22,14 +22,14 @@
           <form class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
+                <label for="firstName">Nome</label>
                 <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Nome" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
+                <label for="lastName">Sobrenome</label>
                 <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Sobrenome" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
@@ -49,10 +49,7 @@
 
             <div class="mb-3">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
+              <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com">
             </div>
 
             <div class="mb-3">
@@ -62,48 +59,58 @@
                 Please enter your shipping address.
               </div>
             </div>
-            <input type="submit" class="btn btn-lg btn-success btn-block" value="Registrar" >
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <!-- Large modal -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">Consultar</button>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="container">
+                    <h4 class="mb-3">Consultar</h4>
+                        <table id="userTable" class="table" style="width:70%" style="background-color: rgb(26, 20, 80);">
+                        <thead>
+                            <tr>
+                                <th>Hostname</th>
+                                <th>Modelo</th>
+                                <th>Local</th>
+                                <th>Setor</th>
+                                <th>Tombamento</th>
+                                <th>Ip</th>
+                                <th>Ramal</th>
+                                <th>Editar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>WSHGMI1234</td>
+                                <td>Notebook Dell i3</td>
+                                <td>HGMI</td>
+                                <td>2º Andar</td>
+                                <td>1234</td>
+                                <td>172.31.29.64</td>
+                                <td>3589</td>
+                                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
+                            </tr>
+                            <tr>
+                                <td>WHSHUR15518</td>
+                                <td>Notebook Dell i3</td>
+                                <td>HUR1</td>
+                                <td>5º Andar</td>
+                                <td>5518</td>
+                                <td>172.31.16.25</td>
+                                <td>4011</td>
+                                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
+                            </tr>
+                        </table>
+                </div>
+                </div>
+              </div>
+            </div>
         </form>
     </div>
     <hr>
-    <div class="container" style="align:center">
-        <h4 class="mb-3">Consultar</h4>
-            <table id="userTable" class="table" style="width:70%" style="background-color: rgb(26, 20, 80);">
-            <thead>
-                <tr>
-                    <th>Hostname</th>
-                    <th>Modelo</th>
-                    <th>Local</th>
-                    <th>Setor</th>
-                    <th>Tombamento</th>
-                    <th>Ip</th>
-                    <th>Ramal</th>
-                    <th>Editar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>WSHGMI1234</td>
-                    <td>Notebook Dell i3</td>
-                    <td>HGMI</td>
-                    <td>2º Andar</td>
-                    <td>1234</td>
-                    <td>172.31.29.64</td>
-                    <td>3589</td>
-                    <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-                </tr>
-                <tr>
-                    <td>WHSHUR15518</td>
-                    <td>Notebook Dell i3</td>
-                    <td>HUR1</td>
-                    <td>5º Andar</td>
-                    <td>5518</td>
-                    <td>172.31.16.25</td>
-                    <td>4011</td>
-                    <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-                </tr>
-            </table>
-    </div>
+    
 
 
 {% endblock %}

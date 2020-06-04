@@ -20,3 +20,7 @@ footer {
 .div-top-dashboard {
     margin-top: 55px;
 }
+
+.modal-content {
+    width: 130%;
+}
