@@ -1,3 +1,5 @@
+{% if error is defined %}
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -11,6 +13,54 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
     <title>TI - Unimed</title>
     <!-- Custom styles for this template -->
+    
+  <body class="text-center">
+      <div class="card">
+          <div class="circle">
+            <img class="mb-4" src="{{ url_for('static',filename='img/rocket-login.png') }}" alt="Rocket Icon">
+          </div>
+          <br>
+          <h1 class="h3 mb-3 font-weight-normal">RockeTI</h1>
+          <form class="form-signin" method="post">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+		            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+		        </div>
+                <input type="text" id="inputLogin" name="login" class="form-control" placeholder="Login" required autofocus>
+            </div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+		            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		        </div>
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <input type="submit" class="btn btn-lg btn-success btn-block" value="Entrar" >
+          </form>
+      </div>
+    {{ bootstrap.load_js() }}
+    <script>
+      alert('{{error}}')
+    </script>
+  </body>
+</html>
+
+{% else %}
+
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ url_for('static',filename='img/favicon/favicon.png')}}">
+    {{ bootstrap.load_css() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}">
+    <title>TI - Unimed</title>
+    <!-- Custom styles for this template -->
+    
   <body class="text-center">
       <div class="card">
           <div class="circle">
@@ -38,6 +88,4 @@
   </body>
 </html>
 
-<!-- <br>
-<span><a href="{{ url_for('register') }}">Cadastrar</a> || <a href="https://www.unimedrecife.com.br/">Portal Unimed</a> </span>
-<br> -->
+{%endif%}

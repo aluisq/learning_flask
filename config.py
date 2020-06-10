@@ -7,8 +7,8 @@ class Config(object):
     SECRET_KEY = "@rrozdoce"
     DB_NAME = "production-db"
     DB_USERNAME = "root"
-    DB_PASSWORD = "example"
-    UPLOADS = "/home/username/app/app/static/img/uploads"
+    DB_PASSWORD = ""
+    UPLOADS = "../../static/img/uploads"
     SESSION_COOKIE_SECURE = True
     BOOTSTRAP_SERVE_LOCAL = True
 
@@ -20,7 +20,7 @@ class DevelopmentConfig(Config):
     DB_NAME = "rocketi"
     DB_USERNAME = "root"
     DB_PASSWORD = ""
-    UPLOADS = "/home/username/learning_flask/app/app/static/img/uploads"
+    UPLOADS = "../../static/img/uploads"
     SESSION_COOKIE_SECURE = False
     SQLALCHEMY_DATABASE_URI = 'sqlite:///bigbox.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False

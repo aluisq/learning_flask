@@ -5,152 +5,171 @@
 <link rel="stylesheet" href="{{url_for('static',filename='css/dataTable.css')}}">
 
 {% endblock %}
-
+   
 {% block body %}
+    <!-- Load img with "loading" -->
 
-<div class="div-top">
-    <!-- <div class="container" style="width: 500px">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-secondary">Submit</button>
-        </form>
+    <div class="div-top">
+        <div id="card" class="card" style="width: 1444px; margin: 0 auto; visibility: hidden">
+            <h1 style="text-align: center; color: rgb(48, 9, 119)">Consulta dos IPS</h1>
+            <hr>
+            <table id="ipTable" class="table" style="width:70%;  margin: auto; ">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tombamento</th>
+                        <th>Ip</th>
+                        <th>Ramal</th>
+                        <th>Local</th>
+                        <th>Setor</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>HGMI</td>
+                        <td>5596</td>
+                        <td>HGMI</td>
+                        <td>posto enfermagem</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WHSHUR15518</td>
+                        <td>5518</td>
+                        <td>172.31.16.25</td>
+                        <td>3698</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>172.31.19.36</td>
+                        <td>3574</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>192.168.36.25</td>
+                        <td>1169</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>172.31.15.39</td>
+                        <td>2478</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>172.31.19.16</td>
+                        <td>4258</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>172.31.16.20</td>
+                        <td>7854</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>172.31.10.21</td>
+                        <td>9654</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>192.168.11.14</td>
+                        <td>5789</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+                    <tr>
+                        <td>WSHGMI1234</td>
+                        <td>Notebook Dell i3</td>
+                        <td>192.168.16.25</td>
+                        <td>3188</td>
+                        <td>HUR1</td>
+                        <td>consultório</td>
+                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </tr>
+            </table>
+            {% for user in users %}
+            <h1>{{user.first_name}}</h1>
+            <h1>{{user.email}}</h1>
+            {% endfor %}
+    
+        </div>
     </div>
-</div> -->
-
-<div class="container">
-        <table id="ipTable" class="table" style="width:70%" style="background-color: rgb(26, 20, 80);">
-        <thead>
-            <tr>
-                <th>Hostname</th>
-                <th>Modelo</th>
-                <th>Local</th>
-                <th>Setor</th>
-                <th>Tombamento</th>
-                <th>Ip</th>
-                <th>Ramal</th>
-                <th>Editar</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>WSHGMI1234</td>
-                <td>Notebook Dell i3</td>
-                <td>HGMI</td>
-                <td>2º Andar</td>
-                <td>1234</td>
-                <td>172.31.29.64</td>
-                <td>3589</td>
-                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-            </tr>
-            <tr>
-                <td>WSHUR158963</td>
-                <td>CPU i3</td>
-                <td>HUR1</td>
-                <td>3º Andar</td>
-                <td>58963</td>
-                <td>192.168.36.98</td>
-                <td>2281</td>
-                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-            </tr>
-            <tr>
-                <td>WHSHUR15696</td>
-                <td>CPU i5</td>
-                <td>HUR1</td>
-                <td>6º Andar</td>
-                <td>5696</td>
-                <td>192.168.36.71</td>
-                <td>2154</td>
-                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-            </tr>
-            <tr>
-                <td>WHSHUR15214</td>
-                <td>CPU i5</td>
-                <td>HGMI</td>
-                <td>6º Andar</td>
-                <td>5214</td>
-                <td>192.168.14.55</td>
-                <td>2154</td>
-                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-            </tr>
-            <tr>
-                <td>WHSHUR13166</td>
-                <td>CPU i3</td>
-                <td>CADM</td>
-                <td>6º Andar</td>
-                <td>3166</td>
-                <td>192.168.20.45</td>
-                <td>2154</td>
-                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-            </tr>
-            <tr>
-                <td>WHSHUR14088</td>
-                <td>Notebook Dell i7</td>
-                <td>HUR3</td>
-                <td>5º Andar</td>
-                <td>4088</td>
-                <td>172.31.11.22</td>
-                <td>5893</td>
-                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-            </tr>
-            <tr>
-                <td>WHSHUR15518</td>
-                <td>Notebook Dell i3</td>
-                <td>HUR1</td>
-                <td>5º Andar</td>
-                <td>5518</td>
-                <td>172.31.16.25</td>
-                <td>4011</td>
-                <td><button class="btn btn-lg btn-success btn-block" type="submit">Editar</button></td>
-            </tr>
-        </table>
-</div>
-
-{% block scripts %}
-
-<script src="{{url_for('static',filename='js/jquery-datatable.js')}}" charset="utf-8"></script>
-
-<script>
-  $(document).ready(function() {
-    $('#ipTable').DataTable({
-                            "language" : {
-                                            "sProcessing":   "A processar...",
-                                            "sLengthMenu":   "Mostrar _MENU_ registos",
-                                            "sZeroRecords":  "Não foram encontrados resultados",
-                                            "sInfo":         "Resultado(s) _START_ a _END_ de um total de _TOTAL_.",
-                                            "sInfoEmpty":    "Mostrando de 0 até 0 de 0 registos",
-                                            "sInfoFiltered": "(filtrado de _MAX_ registos no total)",
-                                            "sInfoPostFix":  "",
-                                            "sSearch":       "Procurar:",
-                                            "sUrl":          "",
-                                            "oPaginate": {
-                                                "sFirst":    "Primeiro",
-                                                "sPrevious": "Anterior",
-                                                "sNext":     "Seguinte",
-                                                "sLast":     "Último"
-                                            }
-                                        },
-                                responsive: true,
-                            // Retirada da visualização da quantidade dos itens por página.
-                            "bLengthChange": false,
-                            // Define o tamanho de registros a serem filtrados, o primeiro é o default.
-                            "lengthMenu": [5, 10, 25, 50, 75, 100 ]
-                        });
-                    });
-</script>
-
 {% endblock %}
+{% block scripts %}
+<script src="{{url_for('static',filename='js/jquery-datatable.js')}}" charset="utf-8"></script>
+<script>
+</script>
+<script>
+    setTimeout(function(){
+        document.getElementById('card').style.visibility = 'visible'
+        $(document).ready( function () {
+            $('#ipTable').DataTable({
+                                    "language" : {
+                                                    "sProcessing":   "A processar...",
+                                                    "sLengthMenu":   "Mostrar _MENU_ registos",
+                                                    "sZeroRecords":  "Não foram encontrados resultados",
+                                                    "sInfo":         "Resultado(s) _START_ a _END_ de um total de _TOTAL_.",
+                                                    "sInfoEmpty":    "Mostrando de 0 até 0 de 0 registos",
+                                                    "sInfoFiltered": "(filtrado de _MAX_ registos no total)",
+                                                    "sInfoPostFix":  "",
+                                                    "sSearch":       "Procurar:",
+                                                    "sUrl":          "",
+                                                    "oPaginate": {
+                                                        "sFirst":    "Primeiro",
+                                                        "sPrevious": "Anterior",
+                                                        "sNext":     "Seguinte",
+                                                        "sLast":     "Último"
+                                                    }
+                                                },
+                                        responsive: true,
+                                    // Retirada da visualização da quantidade dos itens por página.
+                                    "bLengthChange": false,
+                                    // Define o tamanho de registros a serem filtrados, o primeiro é o default.
+                                    "lengthMenu": [5, 10, 25, 50, 75, 100 ]
+                                })
+        })
+    },0)
 
+    $('body').append("<div id='loading'><img id='loading-image' src='{{url_for('static',filename='img/ajax-loader.gif')}}' alt='Loading...'' /></div>");
+    $(window).on('load',function() {
+        setTimeout(removeLoader, 500);
+    });
 
+    function removeLoader(){
+        $("#loading").fadeOut(200, function() {
+          $("#loading").remove(); 
+      });  
+    }
+    
+</script>
 {% endblock %}

@@ -11,8 +11,10 @@
             <a class="btn btn-primary btn-lg" href="#" role="button">Enviar Sugestão</a>
           </div>
     </div>
-    <script src="{{url_for('static',filename='js/app.js')}}" charset="utf-8"></script>
-    {% block scripts %}{% endblock %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static',filename='js/app.js')}}" charset="utf-8"></script>
 {% endblock %}
 
 {% else %}
