@@ -1,6 +1,7 @@
 import datetime
 from app import app, db
 from app.models.users import User
+from app.models.machines import Machine
 from flask import render_template, request, redirect, url_for, send_file
 from flask_login import login_user, logout_user, login_required, current_user
 from app.helpers.authentication import Auth
@@ -14,26 +15,22 @@ def login():
         
         user = User.query.filter_by(login=login).first()
 
-        if user and user.verify_password(password):
+        if not (user and user.verify_password(password)):
+            error = "Login/Password inválido"
+            return render_template('public/templates/login.html', error = error)
+        else:
             payload = {
                     "id" : user.id,
                     "login" : user.login,
                     "exp" : datetime.datetime.utcnow() + datetime.timedelta(minutes=1)
                     }
             token = Auth.create(payload)
-
             print(token)
             print(Auth.checked(token))
             login_user(user)
             return redirect(url_for('index'))
-
-        else:
-            error = "Login/Password inválido"
-            return render_template('public/templates/login.html', error = error)
-
     else:
         return render_template('public/templates/login.html')
-    
     
 @app.route("/logout")
 def logout():
@@ -49,8 +46,8 @@ def ips():
     if not current_user.is_authenticated:
         return redirect(url_for('login'))
     else:
-        users = User.query.filter().all()
-        return render_template('public/templates/ips.html', users = users )
+        machines = Machine.query.filter().all()
+        return render_template('public/templates/ips.html', machines = machines )
 
 @app.route("/documents")
 def doc():

@@ -16,112 +16,34 @@
             <table id="ipTable" class="table" style="width:70%;  margin: auto; ">
                 <thead>
                     <tr>
-                        <th>Nome</th>
+                        <th>Hostname</th>
                         <th>Tombamento</th>
+                        <th>Ur</th>
                         <th>Ip</th>
-                        <th>Ramal</th>
                         <th>Local</th>
                         <th>Setor</th>
+                        <th>Ramal</th>
+                        <th>Registrado</th>
+                        <th>Atualizado</th>
                         <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for machine in machines %}
                     <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>HGMI</td>
-                        <td>5596</td>
-                        <td>HGMI</td>
-                        <td>posto enfermagem</td>
+                        <td>{{machine.hostname}}</td>
+                        <td>{{machine.tipping}}</td>
+                        <td>{{machine.ur}}</td>
+                        <td>{{machine.ip}}</td>
+                        <td>{{machine.local}}</td>
+                        <td>{{machine.sector}}</td>
+                        <td>{{machine.ramal}}</td>
+                        <td>{{machine.created_at}}</td>
+                        <td>{{machine.updated_at}}</td>
                         <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
                     </tr>
-                    <tr>
-                        <td>WHSHUR15518</td>
-                        <td>5518</td>
-                        <td>172.31.16.25</td>
-                        <td>3698</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>172.31.19.36</td>
-                        <td>3574</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>192.168.36.25</td>
-                        <td>1169</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>172.31.15.39</td>
-                        <td>2478</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>172.31.19.16</td>
-                        <td>4258</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>172.31.16.20</td>
-                        <td>7854</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>172.31.10.21</td>
-                        <td>9654</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>192.168.11.14</td>
-                        <td>5789</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
-                    <tr>
-                        <td>WSHGMI1234</td>
-                        <td>Notebook Dell i3</td>
-                        <td>192.168.16.25</td>
-                        <td>3188</td>
-                        <td>HUR1</td>
-                        <td>consultório</td>
-                        <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </tr>
+                    {% endfor %}
             </table>
-            {% for user in users %}
-            <h1>{{user.first_name}}</h1>
-            <h1>{{user.email}}</h1>
-            {% endfor %}
-    
         </div>
     </div>
 {% endblock %}

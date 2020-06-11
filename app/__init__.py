@@ -20,8 +20,8 @@ login_manager = LoginManager(app)
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
 
-from app.views import views, admin_views
-from app.models import users
+from app.views import views, admin_view
+from app.models import users, machines
 
 db.init_app(app)
 db.create_all()
