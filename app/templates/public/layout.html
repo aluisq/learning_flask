@@ -1,26 +1,27 @@
 <!Doctype html>
 <html lang="pt-br">
     <head>
-
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- CSS bootstrap -->
         {{ bootstrap.load_css() }}
         <link rel="icon" href="{{ url_for('static',filename='img/favicon/favicon.png')}}">
         <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>TI - Unimed</title>
         {% block head %}{% endblock %}
     </head>
     <body>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-success">
             <img src="{{ url_for('static',filename='img/rocket.png')}}" alt="foguete">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button style="margin-right: 85%;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index">RockeTI <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{url_for('index')}}">RockeTI <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="documents">Documentos</a>
@@ -32,29 +33,30 @@
                         <a class="nav-link" href="agenda">Agenda Telefônica</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
-                    Olá, Arthur! Precisa de Ajuda?
-                </span>
             </div>
+            <span class="navbar-text">
+                Olá, <span style="color:white;">{{current_user.first_name}}</span>! Precisa de Ajuda? <span style = "letter-spacing:5px;"> | </span>
+            </span>    
+            <span>
+                <a class="btn btn-danger btn-sm rounded-pill" href="{{url_for('logout')}}" role="button"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i></a>
+            </span>
+            
         </nav>
-
-        <!-- Your page content -->
+        <!-- Body HTML -->
         {% block body %}{% endblock %}
-
-        {{ bootstrap.load_js() }}
+        <!-- JS bootstrap -->
+        {{ bootstrap.load_js()}}
+        <!-- Optional JavaScript -->
         {% block scripts %}
-            <!-- Optional JavaScript -->
-
         {% endblock %}
-
-            <!-- Footer -->
-            <footer class="page-footer font-small blue">
-                <!-- Copyright -->
-                <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                    <a href="https://www.unimedrecife.com.br/#!"> Unimed Recife</a>
-                </div>
-                <!-- Copyright -->
-            </footer>
-            <!-- Footer -->
+        <!-- Footer -->
+        <footer class="page-footer fixed-bottom font-small blue">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2020 Copyright:
+                <a href="https://www.unimedrecife.com.br/#!"> Unimed Recife</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
     </body>
 </html>

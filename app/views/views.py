@@ -1,7 +1,7 @@
 from app import app, db
 from app.models.users import User
-from flask import render_template, request, redirect, url_for
-from flask_login import login_user, logout_user
+from flask import render_template, request, redirect, url_for, send_file
+from flask_login import login_user, logout_user, login_required, current_user
 
 @app.route("/login", methods=['GET','POST'])
 def login():
@@ -9,36 +9,55 @@ def login():
     if request.method == 'POST':
         login = request.form['login']
         password = request.form['password']
+        
         user = User.query.filter_by(login=login).first()
 
-        if not user or not user.verify_password(password):
-            return redirect(url_for('login.html'))
-        else:
+        if user and user.verify_password(password):
             login_user(user)
-            redirect(url_for('public/templates/index.html'))
+            return redirect(url_for('index'))
 
-    return render_template('public/templates/login.html')
+        else:
+            error = "Login/Password inválido"
+            return render_template('public/templates/login.html', error = error)
 
+    else:
+        return render_template('public/templates/login.html')
+    
+    
 @app.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for('public/templates/logout.html'))
+    return redirect(url_for('login'))
 
-
-@app.route("/index")
+@app.route("/")
 def index():
-    # print(f"Flask ENV is set to: {app.config['ENV']}")
-    # print(f"Flask DB is set to: {app.config['SQLALCHEMY_DATABASE_URI']}")
     return render_template('public/templates/index.html')
 
 @app.route("/ips")
-def ip():
-    return render_template('public/templates/ips.html')
+def ips():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    else:
+        users = User.query.filter().all()
+        return render_template('public/templates/ips.html', users = users )
 
 @app.route("/documents")
 def doc():
-    return render_template('public/templates/documents.html')
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    else:
+        return render_template('public/templates/documents.html')
+
+@app.route('/documents/teste')
+def doc_pdf():
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    else:
+        return send_file('static/pdf/teste.pdf')
 
 @app.route("/agenda")
 def agenda():
-    return render_template('public/templates/agenda.html')
+    if not current_user.is_authenticated:
+        return redirect(url_for('login'))
+    else:
+        return render_template('public/templates/agenda.html')

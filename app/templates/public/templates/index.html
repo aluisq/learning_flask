@@ -1,7 +1,5 @@
+{% if current_user.is_authenticated %}
 {% extends "public/layout.html" %}
-{% from 'bootstrap/form.html' import render_form %}
-
-<!-- env\Lib\site-packages\flask_bootstrap\templates\bootstrap -->
 
 {% block body %}
     <div class="div-top">
@@ -9,11 +7,23 @@
             <h1 class="display-4">Bem vindo a plataforma da <span style="color: green;" >RockeTI!</span></h1>
             <p class="lead">Aqui você terá alguns recursos para agilizar o seu atendimento, use e abuse ;) </p>
             <hr class="my-4">
-            <p>Caso tenha alguma sugestão, por favor, entre em contato...</p>
+            <p> ARGRAAAAAAAAA  Caso tenha alguma sugestão, por favor, entre em contato...</p>
             <a class="btn btn-primary btn-lg" href="#" role="button">Enviar Sugestão</a>
           </div>
     </div>
-    <script src="{{url_for('static',filename='js/app.js')}}" charset="utf-8"></script>
-    {% block scripts %}
-    {% endblock %}
 {% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static',filename='js/app.js')}}" charset="utf-8"></script>
+{% endblock %}
+
+{% else %}
+<div class="div-top">
+    <div class="jumbotron">
+        <h1 class="display-4">Você precisa se autenticar primeiro...</h1>
+        <hr class="my-4">
+        <a class="btn btn-primary btn-lg" href="{{url_for('login')}}" role="button">Conectar</a>
+      </div>
+</div>
+
+{% endif %}

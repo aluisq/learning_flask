@@ -1,6 +1,7 @@
 from app import app, db
 from app.models.users import User
 from flask import render_template, request, redirect, url_for
+from flask_login import login_user, logout_user
 
 @app.route("/admin/dashboard")
 def admin_dashboard():
@@ -19,11 +20,14 @@ def register():
 
     if request.method == 'POST':
 
-        first_name = request.form['first_name']
-        last_name = request.form['last_name']
+        first_name = request.form['first_name'].capitalize()
+        last_name = request.form['last_name'].capitalize()
         email = request.form['email']
         login = request.form['login']
         password = request.form['password']
+        admin = False
+        created_at = User.created_at
+        updated_at = User.updated_at
 
         # válida se existe os dados do formulário
         if first_name and last_name and email and login and password:
@@ -33,7 +37,7 @@ def register():
             exist_email = User.query.filter_by(email=email).first()
 
             if not exist_login and not exist_email:
-                user = User(first_name,last_name,email,login,password)
+                user = User(first_name,last_name,email,login,password,admin,created_at,updated_at)
                 db.session.add(user)
                 db.session.commit()
                 # incrementar página de mensagem de usuário criado
@@ -41,6 +45,7 @@ def register():
             else:
                 return redirect(url_for('error'))
         else:
-            return render_template('admin/templates/register.html')
+            users = User.query.filter().all()
+            return render_template('admin/templates/register.html', users = users)
     else:
         return render_template('admin/templates/register.html')

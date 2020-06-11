@@ -14,7 +14,6 @@ elif app.config["ENV"] == "testing":
 else:
     app.config.from_object("config.DevelopmentConfig")
 
-
 # instancias para registrar o uso das lib's na aplicação
 
 login_manager = LoginManager(app)

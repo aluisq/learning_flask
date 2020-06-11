@@ -1,52 +1,293 @@
 {% extends 'admin/layoutAdmin.html' %}
 
+{% block head %}
 
+<link rel="stylesheet" href="{{url_for('static',filename='css/dataTable.css')}}">
 
+{% endblock %}
 
 {% block content %}
-    <h1 class="h2">Usuários</h1>
+<h1 style="color: rgba(105, 103, 103, 0.993) ">Usuários</h1>
 {% endblock %}
 
 
 {% block body %}
 
-    <div class="card" style="width: 300px; heidth:300px; align-content: center">
-        <form action="" method="post" >
-            Nome: <input id="nome" name="first_name" type="text">
-            Sobrenome: <input type="text" name="last_name" >
-            Email: <input type="email" name="email">
+    <div class="container"
+    <div class="col-md-8 order-md-1">
+      <div class="container">
+            <table id="userTable" class="table" style="width:100%" style="background-color: rgb(26, 20, 80);">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                    <th>Login</th>
+                    <th>Email</th>
+                    <th>Registrado</th>
+                    <th>Atualizado</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <form action="#">
+                      <td>Henrique</td>
+                      <td>Timóteo</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                    <form action="#">
+                      <td>Amanda</td>
+                      <td>Correia</td>
+                      <td>amanda.correia</td>
+                      <td>amandacr@gmail.com</td>
+                      <td>09/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+                <tr>
+                  <form action="#">
+                      <td>Arthur</td>
+                      <td>Dantas</td>
+                      <td>arthur.dantas</td>
+                      <td>arthur.dantas@unimedrecife.com.br</td>
+                      <td>08/06/2020</td>
+                      <td></td>
+                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
+                    </form>
+                </tr>
+            </table>
+            <hr>
+            <!-- Large modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Cadastrar</button>
             <br>
-            Login: <input type="text" name="login">
-            Password: <input type="password" name="password">
-            <input type="submit" value="Cadastrar" >
-        </form>
-    </div>
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="container">
+                    <hr>
+                    <h4 class="mb-3">Cadastrar</h4>
+                    <form action="" method="post" >
+                      <form class="needs-validation" novalidate>
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="firstName">Nome</label>
+                            <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Nome" value="" required>
+                            <div class="invalid-feedback">
+                              Valid first name is required.
+                            </div>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                            <label for="lastName">Sobrenome</label>
+                            <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Sobrenome" value="" required>
+                            <div class="invalid-feedback">
+                              Valid last name is required.
+                            </div>
+                          </div>
+                        </div>
+            
+                        <div class="mb-3">
+                          <label for="username">Login</label>
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="username" name="login" placeholder="Login" required>
+                            <div class="invalid-feedback" style="width: 100%;">
+                              Your username is required.
+                            </div>
+                          </div>
+                        </div>
+            
+                        <div class="mb-3">
+                          <label for="email">Email</label>
+                          <input type="email" class="form-control" id="email" name="email" placeholder="email@example.com">
+                        </div>
+            
+                        <div class="mb-3">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" id="address" name="password" placeholder="Senha" required>
+                          <div class="invalid-feedback">
+                            Please enter your shipping address.
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Concluir</button>
+                        <hr>
+                          </div>
+                        </div>
+                    </form>
+              </div>
 
 {% endblock %}
 
 
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{ bootstrap.load_css() }}
-    <title>Document</title>
-</head>
-<body>
-    <div class="card" style="width: 300px; heidth:300px; align-content: center">
-        <form action="" method="post" >
-            Nome: <input id="nome" name="first_name" type="text">
-            Sobrenome: <input type="text" name="last_name" >
-            Email: <input type="email" name="email">
-            <br>
-            Login: <input type="text" name="login">
-            Password: <input type="password" name="password">
-            <input type="submit" value="Cadastrar" >
-        </form>
-    </div>
-    {{ bootstrap.load_js() }}
-</body>
-</html> -->
+{% block scripts %}
+
+<script src="{{url_for('static',filename='js/jquery-datatable.js')}}" charset="utf-8"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#userTable').DataTable({
+                            "language" : {
+                                            "sProcessing":   "A processar...",
+                                            "sLengthMenu":   "Mostrar _MENU_ registos",
+                                            "sZeroRecords":  "Não foram encontrados resultados",
+                                            "sInfo":         "Resultado(s) _START_ a _END_ de um total de _TOTAL_.",
+                                            "sInfoEmpty":    "Mostrando de 0 até 0 de 0 registos",
+                                            "sInfoFiltered": "(filtrado de _MAX_ registos no total)",
+                                            "sInfoPostFix":  "",
+                                            "sSearch":       "Procurar:",
+                                            "sUrl":          "",
+                                            "oPaginate": {
+                                                "sFirst":    "Primeiro",
+                                                "sPrevious": "Anterior",
+                                                "sNext":     "Seguinte",
+                                                "sLast":     "Último"
+                                            }
+                                        },
+                                responsive: true,
+                            // Retirada da visualização da quantidade dos itens por página.
+                            "bLengthChange": false,
+                            // Define o tamanho de registros a serem filtrados, o primeiro é o default.
+                            "lengthMenu": [5, 10, 25, 50, 75, 100 ]
+                        });
+                    });
+</script>
+
+{% endblock %}
