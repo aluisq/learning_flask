@@ -36,11 +36,11 @@
             </div>
             <input type="submit" class="btn btn-lg btn-success btn-block" value="Entrar" >
           </form>
+          <div class="alert alert-danger" role="alert">
+            {{error}}
+          </div>
       </div>
     {{ bootstrap.load_js() }}
-    <script>
-      alert('{{error}}')
-    </script>
   </body>
 </html>
 

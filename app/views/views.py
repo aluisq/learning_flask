@@ -1,7 +1,9 @@
+import datetime
 from app import app, db
 from app.models.users import User
 from flask import render_template, request, redirect, url_for, send_file
 from flask_login import login_user, logout_user, login_required, current_user
+from app.helpers.authentication import Auth
 
 @app.route("/login", methods=['GET','POST'])
 def login():
@@ -13,6 +15,15 @@ def login():
         user = User.query.filter_by(login=login).first()
 
         if user and user.verify_password(password):
+            payload = {
+                    "id" : user.id,
+                    "login" : user.login,
+                    "exp" : datetime.datetime.utcnow() + datetime.timedelta(minutes=1)
+                    }
+            token = Auth.create(payload)
+
+            print(token)
+            print(Auth.checked(token))
             login_user(user)
             return redirect(url_for('index'))
 
