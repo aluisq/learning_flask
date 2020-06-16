@@ -31,28 +31,28 @@
         <div class="div-top-dashboard">
             <div class="container-fluid">
                 <div class="row">
-                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
                         <div class="sidebar-sticky pt-3">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="{{url_for('admin_dashboard')}}">
                                         <span data-feather="home"></span>
                                         <i class="fa fa-table fa-2x" aria-hidden="true"></i>
-                                        <span style="color: black; font-size:20px; ">Dashboard</span> <span class="sr-only">(current)</span>
+                                        <span style="color: white; font-size:20px; ">Dashboard</span> <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url_for('register')}}">
                                         <span data-feather="file"></span>
                                         <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
-                                        <span style="color: black; font-size:20px; ">Usuários</span>
+                                        <span style="color: white; font-size:20px; ">Usuários</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         <span data-feather="shopping-cart"></span>
                                         <i class="fa fa-desktop fa-2x" aria-hidden="true"></i>
-                                        <span style="color: black; font-size:20px; ">Máquinas</span>
+                                        <span style="color: white; font-size:20px; ">Máquinas</span>
                                     </a>
                                 </li>
                             </ul>
@@ -78,7 +78,9 @@
                         {% block body %}{% endblock %}
 
                         {{ bootstrap.load_js() }}
-                        <script>
+                        
+                        <!-- Caso deseje o loadScreen apenas habilitar o script abaixo -->
+                        <!-- <script>
                             $('main').append("<div id='loading'><img id='loading-image' src='{{url_for('static',filename='img/ajax-loader.gif')}}' alt='Loading...'' /></div>");
                             $(window).on('load',function() {
                                 setTimeout(removeLoader, 250);
@@ -89,11 +91,13 @@
                                 $("#loading").remove(); 
                             });  
                             }
-                        </script>
+                        </script> -->
                         {% block scripts %}
                         <!-- Optional JavaScript -->
 
                         {% endblock %}
-
-                    </body>
-                    </html>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

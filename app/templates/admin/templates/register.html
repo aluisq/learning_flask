@@ -14,9 +14,24 @@
 {% block body %}
 
     <div class="container"
-    <div class="col-md-8 order-md-1">
-      <div class="container">
-            <table id="userTable" class="table" style="width:100%" style="background-color: rgb(26, 20, 80);">
+      <div class="col-md-8 order-md-1">
+        <div class="container">
+          {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  {% if message == 'Usuário criado com sucesso!' %}
+                    <div class="alert alert-success" role="alert">
+                      {{ message }}
+                    </div>
+                  {% else %}
+                    <div class="alert alert-danger" role="alert">
+                      {{ message }}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+             {% endif %}
+            {% endwith %}
+            <table id="userTable" class="table table-striped" style="width:100%" style="background-color: rgb(26, 20, 80);">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -29,177 +44,24 @@
                 </tr>
             </thead>
             <tbody>
+              {% for user in users %}
                 <tr>
                   <form action="#">
-                      <td>Henrique</td>
-                      <td>Timóteo</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
+                      <td>{{user.first_name}}</td>
+                      <td>{{user.last_name}}</td>
+                      <td>{{user.login}}</td>
+                      <td>{{user.email}}</td>
+                      <td>{{user.created_at}}</td>
+                      <td>{{user.updated_at}}</td>
                       <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
                     </form>
                 </tr>
-                <tr>
-                    <form action="#">
-                      <td>Amanda</td>
-                      <td>Correia</td>
-                      <td>amanda.correia</td>
-                      <td>amandacr@gmail.com</td>
-                      <td>09/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
-                <tr>
-                  <form action="#">
-                      <td>Arthur</td>
-                      <td>Dantas</td>
-                      <td>arthur.dantas</td>
-                      <td>arthur.dantas@unimedrecife.com.br</td>
-                      <td>08/06/2020</td>
-                      <td></td>
-                      <td><button class="btn btn-sl btn-outline-info btn-block" type="submit">Editar</button></td>
-                    </form>
-                </tr>
+              {% endfor %}
             </table>
             <hr>
             <!-- Large modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Cadastrar</button>
             <br>
-
             <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -253,6 +115,10 @@
                         </div>
                     </form>
               </div>
+            </div>
+        </div>
+      </div>
+    </div>
 
 {% endblock %}
 
