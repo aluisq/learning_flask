@@ -1,5 +1,7 @@
-from app import app, db
+from app import app, db, mail
+from flask_mail import Message
 from app.models.users import User
+from app.helpers.email import Email
 from flask import render_template, request, redirect, url_for, flash
 from flask_login import login_user, logout_user, login_required, current_user
 
@@ -72,10 +74,21 @@ def register():
         return redirect(url_for('login'))
 
 
+@app.route('/admin/email')
+def send_email():
+    msg = Message("Hello",recipients=["henriqueluis1998@hotmail.com"])
+    msg.html = "<span>Estou sendo enviado de uma aplicação</span><span style='color:blue;'>Py</span><span style='color:yellow;'>thon</span>"
+    mail.send(msg)
+    return 'Email enviado com sucesso!'
 
+@app.route('/admin/teste')
+def test_email():
 
+    if request.method == 'GET':
+        alert = "Queridos colaboradores, por gentileza, informe o número da matrícula de vocês!" + " Atenciosamente, " + current_user.first_name + " " + current_user.last_name
+        users = User.query.filter().all()
 
+        for user in users:
+            print(f"{alert} enviado para : {user.email}")
 
-
-
-    
+        return "Sucess"

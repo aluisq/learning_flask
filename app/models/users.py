@@ -31,8 +31,8 @@ class User(db.Model, UserMixin):
         self.created_at = datetime.utcnow()
         self.updated_at = datetime.utcnow()
 
-    def verify_password(self,pwd):
-        return check_password_hash(self.password, pwd)
+    def verify_password(self,password_form):
+        return check_password_hash(self.password, password_form)
 
     def __repr__(self):
         return f"<User: {self.first_name} {self.last_name}>"

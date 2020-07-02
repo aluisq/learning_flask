@@ -2,7 +2,7 @@ import datetime
 from app import app, db
 from app.models.users import User
 from app.models.machines import Machine
-from flask import render_template, request, redirect, url_for, send_file, flash
+from flask import render_template, request, redirect, url_for, send_file, flash, session
 from flask_login import login_user, logout_user, login_required, current_user
 from app.helpers.authentication import Auth
 
@@ -29,9 +29,11 @@ def login():
             print(Auth.checked(token))
             if user.admin is True:
                 login_user(user)
+                session.permanent = True
                 return redirect(url_for('admin_dashboard'))
             else:
                 login_user(user)
+                session.permanent = True
                 return redirect(url_for('index'))
     else:
         return render_template('public/templates/login.html')
