@@ -28,9 +28,9 @@ class DevelopmentConfig(Config):
     MAIL_PORT= 465
     MAIL_USE_SSL= True
     MAIL_USE_TLS = False
-    MAIL_USERNAME = 'arthur.play2me@gmail.com'
-    MAIL_PASSWORD = 'AL300992'
-    MAIL_DEFAULT_SENDER = 'arthur.play2me@gmail.com'
+    MAIL_USERNAME = 'seuemail'
+    MAIL_PASSWORD = 'suasenha'
+    MAIL_DEFAULT_SENDER = 'emailpadrao'
 
 class TestingConfig(Config):
     TESTING = True

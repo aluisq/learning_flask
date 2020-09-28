@@ -27,4 +27,4 @@ class Machine(db.Model):
         self.updated_at = datetime.utcnow()
 
     def __repr__(self):
-        return f"<User: {self.hostname} {self.ip}>"
+        return f"<Machine: {self.hostname} {self.ip}>"
